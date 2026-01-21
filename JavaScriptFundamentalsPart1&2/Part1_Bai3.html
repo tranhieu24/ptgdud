@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex; flex-direction: row; gap:10px; width: 600px;">
+        <div style="display: flex; flex-direction: column; gap:10px;">
+            <div>Dolphins score</div>
+            <div style="padding: 2px;">
+                <input id="dolscore1" type="text" placeholder="Dolphins score 1">
+                <input id="dolscore2" type="text" placeholder="Dolphins score 2">
+                <input id="dolscore3" type="text" placeholder="Dolphins score 3">
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap:10px;">
+            <div>Koalas score</div>
+            <div style="padding: 2px;">
+                <input id="koascore1" type="text" placeholder="Koalas score 1">
+                <input id="koascore2" type="text" placeholder="Koalas score 2">
+                <input id="koascore3" type="text" placeholder="Koalas score 3">
+            </div>
+        </div>
+        <button id="btncal" >Calculate</button>
+    </div>
+
+    <script>
+    document.getElementById('btncal').addEventListener('click', function () {
+
+        var AvgDolphins =
+            (Number(dolscore1.value) +
+             Number(dolscore2.value) +
+             Number(dolscore3.value)) / 3;
+
+        var AvgKoalas =
+            (Number(koascore1.value) +
+             Number(koascore2.value) +
+             Number(koascore3.value)) / 3;
+
+        console.log('Dolphins avg:', AvgDolphins.toFixed(1));
+        console.log('Koalas avg:', AvgKoalas.toFixed(1));
+
+        // Bonus 2: thắng / hòa đều phải >= 100
+        if (AvgDolphins > AvgKoalas && AvgDolphins >= 100) {
+            console.log('Dolphins win!');
+        } 
+        else if (AvgKoalas > AvgDolphins && AvgKoalas >= 100) {
+            console.log('Koalas win!');
+        } 
+        else if (
+            AvgDolphins === AvgKoalas &&
+            AvgDolphins >= 100 &&
+            AvgKoalas >= 100
+        ) {
+            console.log(' It is a draw!');
+        } 
+        else {
+            console.log(' No team wins the trophy');
+        }
+    });
+</script>
+
+</body>
+</html>

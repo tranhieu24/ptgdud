@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+</head>
+<body>
+    <div style="display: flex; flex-direction: row; gap:10px;">
+        <input id="Mmass" type="text" placeholder="M mass">
+        <input id="Mheight" type="text" placeholder="M height">
+        <input id="Jmass" type="text" placeholder="J mass">
+        <input id="Jheight" type="text" placeholder="J height">
+        <button id="btncal" >Calculate</button>
+    </div>
+
+    <script>
+        document.getElementById('btncal').addEventListener('click', function () {
+            var Mmass = Number(document.getElementById('Mmass').value);
+            var Mheight = Number(document.getElementById('Mheight').value);
+            var Jmass = Number(document.getElementById('Jmass').value);
+            var Jheight = Number(document.getElementById('Jheight').value);
+
+            var MBMI = Mmass / (Mheight * Mheight);
+            var JBMI = Jmass / (Jheight * Jheight);
+            console.log(MBMI);
+            console.log(JBMI);
+            
+            
+            if (MBMI > JBMI) {
+
+                console.log('true');
+            } else {
+                console.log('false');
+            }
+        });
+    </script>
+</body>
+</html>

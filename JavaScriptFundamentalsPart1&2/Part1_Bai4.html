@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. Tạo hàm tính điểm trung bình
+        const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+
+        // 2. Tạo hàm kiểm tra đội thắng
+        const checkWinner = (avgDolphins, avgKoalas) => {
+            if (avgDolphins >= 2 * avgKoalas) {
+                console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+            } else if (avgKoalas >= 2 * avgDolphins) {
+                console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+            } else {
+                console.log("No team wins");
+            }
+        };
+
+        // 3. Dữ liệu cho Data 1
+        const dolphinsAvg1 = calcAverage(44, 23, 71);
+        const koalasAvg1 = calcAverage(65, 54, 49);
+        console.log("Data 1:");
+        checkWinner(dolphinsAvg1, koalasAvg1);
+
+        // 4. Dữ liệu cho Data 2
+        const dolphinsAvg2 = calcAverage(85, 54, 41);
+        const koalasAvg2 = calcAverage(23, 34, 27);
+        console.log("Data 2:");
+        checkWinner(dolphinsAvg2, koalasAvg2);
+    </script>
+</body>
+</html>
