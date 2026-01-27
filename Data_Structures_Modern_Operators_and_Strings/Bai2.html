@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coding Challenge #2</title>
+</head>
+<body>
+    <script>
+        const game = {
+            team1: 'Bayern Munich',
+            team2: 'Borrussia Dortmund',
+            players: [
+                [
+                    'Neuer',
+                    'Pavard',
+                    'Martinez',
+                    'Alaba',
+                    'Davies',
+                    'Kimmich',
+                    'Goretzka',
+                    'Coman',
+                    'Muller',
+                    'Gnarby',
+                    'Lewandowski',
+                ],
+                [
+                    'Burki',
+                    'Schulz',
+                    'Hummels',
+                    'Akanji',
+                    'Hakimi',
+                    'Weigl',
+                    'Witsel',
+                    'Hazard',
+                    'Brandt',
+                    'Sancho',
+                    'Gotze',
+                ],
+            ],
+            score: '4:0',
+            scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+            date: 'Nov 9th, 2037',
+            odds: {
+                team1: 1.33,
+                x: 3.25,
+                team2: 6.5,
+            },
+        };
+        
+        for (let i = 0; i < game.scored.length; i++) {
+            console.log(`Goal ${i + 1}: ${game.scored[i]}`);
+        }
+
+        const odds = Object.values(game.odds);
+        let sum = 0 ;
+        for (const odd of odds) {
+            sum+=odd;
+        }
+        const averageodds = sum/odds.length;
+        console.log(`Average odds : ${averageodds}`);
+        
+        // for (const i of odds) {
+        //     if(i == 1.33)
+        //         console.log(`${game.team1} : 1.33`);
+        //     if(i == 3.25)
+        //         console.log(`draw: 3.25`);
+        //     if( i == 6.5)
+        //         console.log(`${game.team2} : 6.55`);
+                
+        // }
+
+        for (const [key,odd] of Object.entries(game.odds)) {
+            let rs ;
+            if(key === 'x'){
+                rs = 'draw';
+            }else{
+                rs = `victory ${game[key]}`;
+            }
+
+            console.log(`Odd of ${rs}: ${[odd]}`);
+            
+            }
+            const scorers = {};
+
+            for (const player of game.scored) {
+                if (scorers[player]) {
+                    scorers[player]++;
+                } else {
+                    scorers[player] = 1;
+                }
+            }
+
+  console.log(scorers);
+
+
+
+    </script>
+</body>
+</html>
